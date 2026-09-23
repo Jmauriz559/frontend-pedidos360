@@ -1,0 +1,24 @@
+<div style="padding: 20px;">
+    <h2>Gestión de Pedidos</h2>
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: left;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 10px;">ID Pedido</th>
+                <th style="padding: 10px;">Cliente</th>
+                <th style="padding: 10px;">Estado Actual</th>
+                <th style="padding: 10px;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of orders">
+                <td style="padding: 10px;">{{ o.id }}</td>
+                <td style="padding: 10px;">{{ o.clientEmail || 'Cliente' }}</td>
+                <td style="padding: 10px;"><span style="font-weight: bold;">{{ o.status }}</span></td>
+                <td style="padding: 10px;">
+                    <button (click)="updateOrderStatus(o.id, 'ACEPTADO')"
+                        style="padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">Aceptar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

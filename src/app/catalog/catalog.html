@@ -1,0 +1,21 @@
+<div style="padding: 20px;">
+    <h2>Catálogo de Productos</h2>
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: left;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 10px;">ID</th>
+                <th style="padding: 10px;">Producto</th>
+                <th style="padding: 10px;">Precio</th>
+                <th style="padding: 10px;">Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td style="padding: 10px;">{{ p.id }}</td>
+                <td style="padding: 10px;">{{ p.nombre || p.name }}</td>
+                <td style="padding: 10px;">${{ p.precio || p.price }}</td>
+                <td style="padding: 10px;">{{ p.stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
